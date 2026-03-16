@@ -2,7 +2,7 @@
 
 # MedQ-DEG-Bench: Benchmarking Robustness of Medical VLMs Against Image Degradation
 
-_How robust are medical vision-language models when image quality degrades?_
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=32&pause=1200&color=2E86C1&center=true&vCenter=true&width=1000&height=70&lines=How+robust+are+medical+VLMs+under+image+degradation%3F;18+Clinically-relevant+Degradation+Types;7+Medical+Imaging+Modalities+%E2%80%A2+24%2C894+Samples;Plug-and-play+with+VLMEvalKit)](https://github.com/liujiyaoFDU/MedQ-DEG)
 
 [![arXiv](https://img.shields.io/badge/arXiv-2603.07769-b31b1b.svg)](https://arxiv.org/abs/2603.07769)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
@@ -43,6 +43,15 @@ _How robust are medical vision-language models when image quality degrades?_
 - **Large-Scale Benchmark**: 24,894 samples covering degraded and clean reference images
 - **Multi-Source Aggregation**: Samples sourced from 3 established medical VQA datasets
 - **Plug-and-Play Evaluation**: Integrated with [VLMEvalKit](https://github.com/open-compass/VLMEvalKit/tree/lite) for seamless model evaluation
+
+## Research Highlights
+
+<div align="center">
+<div style="width: 100%; text-align: center; margin:auto;">
+    <img style="width:100%" src="images/poseter.png" alt="MedQ-Deg Research Highlights Poster">
+</div>
+<p><strong>Key findings from MedQ-Deg.</strong> The benchmark uncovers three critical phenomena in medical VLM robustness: (i) a <em>Calibration Shift</em> — models sustain high confidence even as accuracy collapses under degradation, posing a silent safety risk in clinical deployment; (ii) a <em>Cliff Effect</em> — accuracy degradation is nonlinear with severity, with catastrophic failure emerging at the severe level; and (iii) differential <em>Skill-Specific Robustness</em> — clinical reasoning remains relatively resilient while medical perception (e.g., anatomical recognition) degrades most severely. Among degradation categories, modality-specific artifacts are the most destructive, causing the largest average accuracy drops.</p>
+</div>
 
 ## Benchmark Architecture
 
