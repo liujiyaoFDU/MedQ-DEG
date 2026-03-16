@@ -35,12 +35,6 @@ _How robust are medical vision-language models when image quality degrades?_
 
 **MedQ-DEG-Bench** is a comprehensive benchmark for evaluating the **robustness** of medical Vision-Language Models (VLMs) against various types of image degradation. In real-world clinical scenarios, medical images often suffer from quality degradation due to equipment limitations, patient motion, and acquisition artifacts. This benchmark systematically measures how such degradations affect VLM diagnostic performance.
 
-<div align="center">
-<div style="width: 80%; text-align: center; margin:auto;">
-    <img style="width:80%" src="images/all_models_comparison.png" alt="Model performance across medical image quality degradation">
-</div>
-</div>
-
 ### Key Features
 
 - **Systematic Degradation Simulation**: 18 clinically-relevant degradation types across 7 medical imaging modalities
@@ -184,7 +178,7 @@ If you use MedQ-DEG-Bench in your research, please cite our paper:
 ```bibtex
 @article{liu2026medq,
   title={MedQ-Deg: A Multidimensional Benchmark for Evaluating MLLMs Across Medical Image Quality Degradations},
-  author={Liu, Jiyao and Ning, Junzhi and Ma, Chenglong and Qu, Wanying and Shen, Jianghan and Luo, Siqi and Wei, Jinjie and Ye, Jin and Li, Pengze and Li, Tianbin and others},
+  author={Jiyao Liu and Junzhi Ning and Chenglong Ma and Wanying Qu and Jianghan Shen and Siqi Luo and Jinjie Wei and Jin Ye and Pengze Li and Tianbin Li and Jiashi Lin and Hongming Shan and Xinzhe Luo and Xiaohong Liu and Lihao Liu and Junjun He and Ningsheng Xu},
   journal={arXiv preprint arXiv:2603.07769},
   year={2026}
 }
