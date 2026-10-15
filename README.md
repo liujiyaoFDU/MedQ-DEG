@@ -1,9 +1,12 @@
 <div align="center">
 
-# MedQ-DEG-Bench: Benchmarking Robustness of Medical VLMs Against Image Degradation
+# MedQ-Deg: A Multidimensional Benchmark for Evaluating MLLMs Across Medical Image Quality Degradations
+
+**ECCV 2026 · Main Conference**
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=32&pause=1200&color=2E86C1&center=true&vCenter=true&width=1000&height=70&lines=How+robust+are+medical+VLMs+under+image+degradation%3F;18+Clinically-relevant+Degradation+Types;7+Medical+Imaging+Modalities+%E2%80%A2+24%2C894+Samples;Plug-and-play+with+VLMEvalKit)](https://github.com/liujiyaoFDU/MedQ-DEG)
 
+[![ECCV 2026](https://img.shields.io/badge/ECCV-2026-2E86C1.svg)](https://doi.org/10.1007/978-3-032-37035-8_14)
 [![arXiv](https://img.shields.io/badge/arXiv-2603.07769-b31b1b.svg)](https://arxiv.org/abs/2603.07769)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/)
@@ -29,18 +32,24 @@
 
 ## News
 
+- **[2026.09]** MedQ-Deg published in [Computer Vision – ECCV 2026](https://doi.org/10.1007/978-3-032-37035-8_14), Part IX, pp. 246–264.
+
 - **[2025.10]** VLMEvalKit integration now supported!
 - **[2025.10]** MedQ-DEG-Bench dataset publicly released on [Hugging Face](https://huggingface.co/datasets/jiyaoliufd/MedQ-DEG-Bench)
 
 ## Overview
 
-**MedQ-DEG-Bench** is a comprehensive benchmark for evaluating the **robustness** of medical Vision-Language Models (VLMs) against various types of image degradation. In real-world clinical scenarios, medical images often suffer from quality degradation due to equipment limitations, patient motion, and acquisition artifacts. This benchmark systematically measures how such degradations affect VLM diagnostic performance.
+**MedQ-Deg** (released as **MedQ-DEG-Bench**) evaluates medical VLM robustness to image degradation and confidence calibration under degraded conditions. It contains **24,894 question-answer pairs** across **7 imaging modalities**, **18 degradation types**, and **30 fine-grained clinical capabilities**, with multi-severity evaluation.
+
+Beyond accuracy, the benchmark uses **Calibration Shift** to quantify the gap between model confidence and actual performance. Evaluation of 40 MLLMs shows that models can retain inappropriately high confidence even as accuracy declines under severe image degradation.
 
 ### Key Features
 
 - **Systematic Degradation Simulation**: 18 clinically-relevant degradation types across 7 medical imaging modalities
 - **Multi-Severity Evaluation**: Each degradation applied at mild and severe levels to quantify robustness gradients
-- **Large-Scale Benchmark**: 24,894 samples covering degraded and clean reference images
+- **Large-Scale Benchmark**: 24,894 question-answer pairs covering degraded and clean reference images
+- **Clinical Capability Coverage**: 30 fine-grained clinical capabilities
+- **Confidence Calibration Analysis**: Calibration Shift measures the gap between model confidence and actual performance under degradation
 - **Multi-Source Aggregation**: Samples sourced from 3 established medical VQA datasets
 - **Plug-and-Play Evaluation**: Integrated with [VLMEvalKit](https://github.com/open-compass/VLMEvalKit/tree/lite) for seamless model evaluation
 
@@ -159,14 +168,15 @@ python run.py --model grok-4 --data MedQDEGBench_simulate_test MedQDEGBench_good
 
 ### Evaluation Metrics
 
-The benchmark provides multi-dimensional accuracy analysis:
+The benchmark evaluates robustness through multi-dimensional accuracy analysis and examines confidence calibration:
 
 - **Overall Accuracy**: Aggregate performance across all samples
 - **By Modality**: Performance breakdown across 7 medical imaging modalities
 - **By Degradation Type**: Accuracy for each of 18 degradation types
 - **By Severity Level**: Comparison between mild, severe, and clean conditions
 - **By Source Dataset**: Performance across different source medical VQA datasets
-- **By Capability**: Performance across different medical capability dimensions (e.g., high-level and mid-level capabilities)
+- **By Capability**: Performance across 30 fine-grained clinical capabilities
+- **Confidence Calibration**: Calibration Shift quantifies the gap between perceived confidence and actual performance under degradation
 
 ## Leaderboard
 
@@ -186,11 +196,17 @@ The benchmark provides multi-dimensional accuracy analysis:
 If you use MedQ-DEG-Bench in your research, please cite our paper:
 
 ```bibtex
-@article{liu2026medq,
+@inproceedings{liu2026medq,
   title={MedQ-Deg: A Multidimensional Benchmark for Evaluating MLLMs Across Medical Image Quality Degradations},
   author={Jiyao Liu and Junzhi Ning and Chenglong Ma and Wanying Qu and Jianghan Shen and Siqi Luo and Jinjie Wei and Jin Ye and Pengze Li and Tianbin Li and Jiashi Lin and Hongming Shan and Xinzhe Luo and Xiaohong Liu and Lihao Liu and Junjun He and Ningsheng Xu},
-  journal={arXiv preprint arXiv:2603.07769},
-  year={2026}
+  booktitle={Computer Vision -- ECCV 2026},
+  series={Lecture Notes in Computer Science},
+  volume={17009},
+  pages={246--264},
+  publisher={Springer Nature Switzerland},
+  year={2026},
+  doi={10.1007/978-3-032-37035-8_14},
+  url={https://doi.org/10.1007/978-3-032-37035-8_14}
 }
 ```
 
